@@ -15,6 +15,12 @@ export function getDonationInfo() {
   };
 }
 
+// SIDE EFFECT:
+// As a convenience to users, we add to the document so the function need not be
+// invoked directly. This is safe, since by the time we execute, the URL params
+// are already set.
+document.donationInfo = getDonationInfo();
+
 /** Get the gift type based on info from the URL parameters.
  * @see getDonationInfo()
  * @return 'donation' | 'regular donation'
