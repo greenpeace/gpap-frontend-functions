@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "rm -rf dist && npx bili --format cjs --format esm --format umd --format iife --module-name donations",
+    "prepare": "npm version patch && rm -rf dist && npx bili --format cjs --format esm --format umd --format iife --module-name donations",
     "pub": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
