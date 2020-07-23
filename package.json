@@ -5,7 +5,7 @@
   "description": "Supporting frontend library functions for GPAP web infra.",
   "main": "index.js",
   "scripts": {
-    "build:parcel": "parcel build --global gpap-donate-functions",
+    "pub": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Peter Weltë",
