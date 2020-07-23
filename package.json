@@ -1,0 +1,13 @@
+{
+  "name": "@gp-australia-pacific/gpap-frontend-functions",
+  "repository": "github:greenpeace/gpap-frontend-functions",
+  "version": "1.0.0",
+  "description": "Supporting frontend library functions for GPAP web infra.",
+  "main": "index.js",
+  "scripts": {
+    "build:parcel": "parcel build --global gpap-donate-functions",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Weltë",
+  "license": "SEE LICENSE IN LICENSE.txt"
+}
