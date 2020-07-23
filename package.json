@@ -1,10 +1,14 @@
 {
   "name": "@gp-australia-pacific/gpap-frontend-functions",
   "repository": "github:greenpeace/gpap-frontend-functions",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Supporting frontend library functions for GPAP web infra.",
   "main": "src/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "prepare": "rm -rf dist && npx bili --format cjs --format esm --format umd --format iife --module-name donations",
     "pub": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
