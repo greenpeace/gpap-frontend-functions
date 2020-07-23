@@ -14,3 +14,17 @@ export function getDonationInfo() {
     },
   };
 }
+
+/** Get the gift type based on info from the URL parameters.
+ * @see getDonationInfo()
+ * @return 'donation' | 'regular donation'
+ */
+export function getGiftType() {
+  const url = new window.URL(window.location.href);
+  const recurring = url.searchParams.get('recurring') === 'true';
+
+  if (recurring) {
+    return 'regular donation';
+  }
+  return 'donation';
+}
