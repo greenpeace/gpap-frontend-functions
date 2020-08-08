@@ -8,10 +8,21 @@
     "dist"
   ],
   "scripts": {
-    "prepublishOnly": "npm version patch && rm -rf dist && npx bili --format cjs --format esm --format umd --format iife --module-name donations",
+    "build:css": "cat src/*.css | npx postcss -o dist/gp-donate.css",
+    "build:js": "npx bili --format cjs --format esm --format umd --format iife --module-name donations src/index.js",
+    "build": "rm -rf dist && npm run build:js && npm run build:css",
+    "prepublishOnly": "npm version patch && npm build && npm build:css",
     "pub": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Peter Weltë",
-  "license": "SEE LICENSE IN LICENSE.txt"
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "cssnano": "^4.1.10",
+    "doiuse": "^4.2.0",
+    "postcss-cli": "^7.1.1",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "uncss": "^0.17.3"
+  }
 }
