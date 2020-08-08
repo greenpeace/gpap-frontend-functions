@@ -2,7 +2,7 @@
  * This is designed for compatibility with GPAP donation pages.
  * @return { amount, firstName, recurring, meta, transaction: { id }}
  */
-export function getDonationInfo() {
+export function getInfo() {
   const url = new window.URL(window.location.href);
   return {
     amount: url.searchParams.get('amount'),
@@ -19,13 +19,13 @@ export function getDonationInfo() {
 // As a convenience to users, we add to the document so the function need not be
 // invoked directly. This is safe, since by the time we execute, the URL params
 // are already set.
-document.donationInfo = getDonationInfo();
+document.donationInfo = getInfo();
 
 /** Get the gift type based on info from the URL parameters.
- * @see getDonationInfo()
+ * @see getGift()
  * @return 'donation' | 'regular donation'
  */
-export function getGiftType() {
+export function getType() {
   const url = new window.URL(window.location.href);
   const recurring = url.searchParams.get('recurring') === 'true';
 
