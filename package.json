@@ -11,7 +11,7 @@
     "build:css": "cat src/*.css | npx postcss -o dist/gp-donate.css",
     "build:js": "npx bili --format cjs --format esm --format umd --format iife --module-name donations src/index.js",
     "build": "rm -rf dist && npm run build:js && npm run build:css",
-    "prepublishOnly": "npm version patch && npm build && npm build:css",
+    "prepublishOnly": "npm version patch && npm run build",
     "pub": "npm publish --access public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
