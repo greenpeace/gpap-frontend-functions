@@ -25,12 +25,12 @@ In the JavaScript:
 
 In the HTML below the donate form:
 ```html
-<div class="donate-disclaimer-container">
-<p id="donate-disclaimer-oo" style="display:none;">
-Your generous one-time gift will help fund our campaign.
-</p>
-<p id="donate-disclaimer-rg"  style="display:none;">
-Your account will be debited today, then every subsequent 4 weeks. <a href="https://www.greenpeace.org.au/contact/">Get in touch with us to</a> arrange an alternative date.
-</p>
-</div>
+  <div class="donate-disclaimer-container gp-text-slate">
+    <p id="donate-disclaimer-oo" class="gp-hidden">
+      Your generous one-time gift helps fund our campaigns for a better and greener future.
+    </p>
+    <p id="donate-disclaimer-rg" class="gp-hidden">
+      Your account will be debited today, then every subsequent 4 weeks. <a href="https://www.greenpeace.org.au/contact/">Get in touch with us to</a> arrange an alternative date.
+    </p>
+  </div>
 ```
