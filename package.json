@@ -13,7 +13,7 @@
     "build:js": "npx bili --format cjs --format esm --format umd --format umd-min --format iife --module-name donations src/index.js",
     "build": "rm -rf dist && npm run build:js && npm run build:css",
     "prepublishOnly": "npm version patch && npm run build",
-    "pub": "npm publish --access public",
+    "pub": "npm publish --access public && npm run docs:publish",
     "docs:serve": "echo open http://localhost:4001 in just a moment… && documentation serve src/index.js --watch --sort-order alpha --config documentation.yml",
     "docs:build": "documentation build src/index.js -f html -o docs --config documentation.yml",
     "docs:publish": "yarn docs:build && gh-pages -d docs",
