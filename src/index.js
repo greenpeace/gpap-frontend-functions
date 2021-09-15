@@ -57,3 +57,55 @@ export function getType() {
  * @property {string} transaction.id
  **/
 
+
+/** Returns the jQuery lib (or a simple mock)
+ * @private
+ */
+function getJQ() {
+  var func = 'function';
+  if (typeof ijQuery === func) {
+    // Instapage jQuery
+    return ijQuery;
+  } else if (typeof jQuery === func) {
+    return jQuery;
+  } else {
+    return function (f) {
+      // If no jquery, we just run immediately.
+      f();
+    }
+  }
+}
+
+/** Gets a frequency toggler function that can be passed as the `frequency-hook` to the donation element.
+ * @param oneOffId - the ID of a `<div>` to be shown when the frequency is one-off.
+ * @param recurringId - the ID of a `<div>` to be shown when the frequency is recurring.
+ */
+export function getToggler(oneOffId, recurringId) {
+  if (!oneOffId || !recurringId) {
+    return function() {}; // no-op
+  }
+
+  return function toggler(frequency) {
+    var anyJQ = getJQ();
+    anyJQ(function () {
+      // Save the recurring gift disclaimer node
+      var recurringMessage = document.getElementById(recurringId);
+      var oneoffMessage = document.getElementById(oneOffId);
+
+      console.log('new donation frequency: ', frequency);
+      if (!oneoffMessage || !recurringMessage) {
+        console.warn('Missing disclaimer(s) after frequency change');
+        return;
+      }
+
+      // Toggle which disclaimer is shown. `frequency` is `once` or `recurring`
+      if (frequency === 'once') {
+        recurringMessage.style.display = 'none';
+        oneoffMessage.style.display = 'block';
+      } else if (frequency === 'recurring') {
+        oneoffMessage.style.display = 'none';
+        recurringMessage.style.display = 'block';
+      }
+    });
+ }
+}
