@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build:css": "cat src/*.css | npx postcss -o dist/gp-donate.css",
-    "build:js": "npx bili --format cjs --format esm --format umd --format iife --module-name donations src/index.js",
+    "build:js": "npx bili --format cjs --format esm --format umd --format umd-min --format iife --module-name donations src/index.js",
     "build": "rm -rf dist && npm run build:js && npm run build:css",
     "prepublishOnly": "npm version patch && npm run build",
     "pub": "npm publish --access public",
