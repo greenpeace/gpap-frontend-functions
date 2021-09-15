@@ -1,6 +1,6 @@
 /** Get donation info from donate redirect URL parameters.
  * This is designed for compatibility with GPAP donation pages.
- * @return { amount, firstName, recurring, meta, transaction: { id }}
+ * @return {DonationInfoObject}
  */
 export function getInfo() {
   const url = new window.URL(window.location.href);
@@ -15,15 +15,25 @@ export function getInfo() {
   };
 }
 
-// SIDE EFFECT:
-// As a convenience to users, we add to the document so the function need not be
-// invoked directly. This is safe, since by the time we execute, the URL params
-// are already set.
+/**
+ * <strong>SIDE EFFECT</strong>: We add to a global:
+ * `document.donationInfo` is set to be a {@link DonationInfoObject}.
+ *
+ * This is meant as a convenience to users, so the {@link getInfo}
+ * function need not be invoked directly. This is safe, since by the
+ * time we execute, the URL params are already set.
+ *
+ * @example
+ * ```
+ * var firstName = document.donationInfo.firstname;
+ * ```
+ * @global
+ **/
 document.donationInfo = getInfo();
 
 /** Get the gift type based on info from the URL parameters.
- * @see getGift()
- * @return 'donation' | 'regular donation'
+ * @see getInfo() to get the full donation info.
+ * @return {string} 'donation' | 'regular donation'
  */
 export function getType() {
   const url = new window.URL(window.location.href);
@@ -34,3 +44,16 @@ export function getType() {
   }
   return 'donation';
 }
+
+
+/**
+ * Information about a donation.
+ * @typedef {Object} DonationInfoObject
+ * @property {string} amount
+ * @property {string} firstName
+ * @property {boolean} recurring
+ * @property {Object} meta
+ * @property {Object} transaction - info about the transaction
+ * @property {string} transaction.id
+ **/
+
