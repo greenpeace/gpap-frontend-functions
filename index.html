@@ -35,29 +35,9 @@
               
                 
                 <li><a
-                  href='#getinfo'
-                  class="">
-                  getInfo
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#donationinfo'
                   class="">
                   donationInfo
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#gettype'
-                  class="">
-                  getType
                   
                 </a>
                 
@@ -75,9 +55,29 @@
               
                 
                 <li><a
+                  href='#getinfo'
+                  class="">
+                  getInfo
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#gettoggler'
                   class="">
                   getToggler
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#gettype'
+                  class="">
+                  getType
                   
                 </a>
                 
@@ -155,64 +155,6 @@ open docs/index.html
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='getinfo'>
-      getInfo
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Get donation info from donate redirect URL parameters.
-This is designed for compatibility with GPAP donation pages.</p>
-<p>Rather than calling this function, you can just use the global
-<a href="#donationinfo">`document.donationInfo`</a>.</p>
-
-
-  <div class='pre p1 fill-light mt0'>getInfo(): <a href="#donationinfoobject">DonationInfoObject</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="#donationinfoobject">DonationInfoObject</a></code>:
-        
-
-      
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='donationinfo'>
       donationInfo
     </h3>
@@ -255,61 +197,6 @@ time we execute, the URL params are already set.</p>
 var firstName = document.donationInfo.firstName;
 `</span><span class="hljs-string">``</span></pre>
     
-  
-
-  
-
-  
-
-  
-</section>
-
-          
-        
-          
-            <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='gettype'>
-      getType
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Get the gift type based on info from the URL parameters.</p>
-
-
-  <div class='pre p1 fill-light mt0'>getType(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
-        'donation' | 'regular donation'
-
-      
-    
-  
-
-  
-
   
 
   
@@ -423,6 +310,64 @@ var firstName = document.donationInfo.firstName;
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='getinfo'>
+      getInfo
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Get donation info from donate redirect URL parameters.
+This is designed for compatibility with GPAP donation pages.</p>
+<p>Rather than calling this function, you can just use the global
+<a href="#donationinfo">`document.donationInfo`</a>.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getInfo(): <a href="#donationinfoobject">DonationInfoObject</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#donationinfoobject">DonationInfoObject</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='gettoggler'>
       getToggler
     </h3>
@@ -483,6 +428,61 @@ var firstName = document.donationInfo.firstName;
         whose name can be passed as the 
 <code>frequency-hook</code>
  to the donation element.
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='gettype'>
+      getType
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Get the gift type based on info from the URL parameters.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getType(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        'donation' | 'regular donation'
 
       
     
