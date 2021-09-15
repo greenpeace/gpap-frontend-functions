@@ -36,6 +36,14 @@ In the HTML below the donate form:
   </div>
 ```
 
+## Contributing
+
+1. Make a change
+
+2. Submit a Pull Request
+
+3. Once merged, run `npm run pub` (note that trying to use Yarn will result in an error publishing to the Yarn registry; use `npm` and it will publish correctly to the NPM registry).
+
 ## Documentation
 
 View API docs [online](https://github.io/greenpeace/gpap-frontend-functions) or locally via `yarn docs:serve`.
