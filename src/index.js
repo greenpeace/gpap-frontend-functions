@@ -1,5 +1,8 @@
 /** Get donation info from donate redirect URL parameters.
  * This is designed for compatibility with GPAP donation pages.
+ *
+ * Rather than calling this function, you can just use the global
+ * {@link #donationinfo `document.donationInfo`}.
  * @return {DonationInfoObject}
  */
 export function getInfo() {
@@ -25,7 +28,7 @@ export function getInfo() {
  *
  * @example
  * ```
- * var firstName = document.donationInfo.firstname;
+ * var firstName = document.donationInfo.firstName;
  * ```
  * @global
  **/
@@ -76,9 +79,11 @@ function getJQ() {
   }
 }
 
-/** Gets a frequency toggler function that can be passed as the `frequency-hook` to the donation element.
- * @param oneOffId - the ID of a `<div>` to be shown when the frequency is one-off.
- * @param recurringId - the ID of a `<div>` to be shown when the frequency is recurring.
+/** Gets a frequency toggler function.
+ *
+ * @param {string} oneOffId - the ID of a `<div>` to be shown when the frequency is one-off.
+ * @param {string} recurringId - the ID of a `<div>` to be shown when the frequency is recurring.
+ * @return {Function} whose name can be passed as the `frequency-hook` to the donation element.
  */
 export function getToggler(oneOffId, recurringId) {
   if (!oneOffId || !recurringId) {
