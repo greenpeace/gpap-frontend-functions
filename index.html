@@ -1,0 +1,456 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>@gp-australia-pacific/gpap-frontend-functions 1.1.5 | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
+  <link href='assets/style.css' type='text/css' rel='stylesheet' />
+  <link href='assets/github.css' type='text/css' rel='stylesheet' />
+  <link href='assets/split.css' type='text/css' rel='stylesheet' />
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'>@gp-australia-pacific/gpap-frontend-functions</h3>
+          <div class='mb1'><code>1.1.5</code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#overview'
+                  class="h5 bold black caps">
+                  Overview
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#getinfo'
+                  class="">
+                  getInfo
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#donationinfo'
+                  class="">
+                  donationInfo
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#gettype'
+                  class="">
+                  getType
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#donationinfo'
+                  class="">
+                  DonationInfo
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#transactioninfo'
+                  class="">
+                  TransactionInfo
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='http://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+            <div class='keyline-top-not py2'><section class='py2 clearfix'>
+
+  <h2 id='overview' class='mt0'>
+    Overview
+  </h2>
+
+  
+    <h2>Helper functions &#x26; CSS</h2>
+<p>These get published to NPM and from there to places like UNPKG, e.g. at <a href="https://unpkg.com/browse/@gp-australia-pacific/gpap-frontend-functions/">https://unpkg.com/browse/@gp-australia-pacific/gpap-frontend-functions/</a></p>
+<p>Once on the CDN, can be added to webpages directly.</p>
+<p>Add the latest version of the helper scripts &#x26; CSS (e.g. in the HTML head):</p>
+<pre class='hljs'><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://unpkg.com/@gp-australia-pacific/gpap-frontend-functions@latest"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/@gp-australia-pacific/gpap-frontend-functions@latest/dist/gp-donate.css"</span>&gt;</span></pre>
+<h2>Examples</h2>
+<h3>Disclaimer toggler</h3>
+<p>In the JavaScript:</p>
+<pre class='hljs'>  <span class="hljs-keyword">var</span> recurringId = <span class="hljs-string">'donate-disclaimer-rg'</span>;
+  <span class="hljs-keyword">var</span> oneOffId = <span class="hljs-string">'donate-disclaimer-oo'</span>;
+  <span class="hljs-keyword">var</span> newFreq = donations.getToggler(oneOffId, recurringId);</pre>
+<p>In the HTML below the donate form:</p>
+<pre class='hljs'>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"donate-disclaimer-container gp-text-slate"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"donate-disclaimer-oo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gp-hidden"</span>&gt;</span>
+      Your generous one-time gift helps fund our campaigns for a better and greener future.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"donate-disclaimer-rg"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"gp-hidden"</span>&gt;</span>
+      Your account will be debited today, then every subsequent 4 weeks. <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.greenpeace.org.au/contact/"</span>&gt;</span>Get in touch with us to<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> arrange an alternative date.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></pre>
+<h2>Documentation</h2>
+<p>View it <a href="https://github.io/greenpeace/gpap-frontend-functions">here</a>.</p>
+<p>Generate it:</p>
+<pre><code>yarn global add documentation
+yarn docs:html
+open docs/index.html
+</code></pre>
+<p>Publish it:</p>
+<pre><code>yarn docs:publish
+</code></pre>
+
+  
+</section>
+</div>
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='getinfo'>
+      getInfo
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Get donation info from donate redirect URL parameters.
+This is designed for compatibility with GPAP donation pages.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getInfo(): <a href="#donationinfo">DonationInfo</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="#donationinfo">DonationInfo</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='donationinfo'>
+      donationInfo
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>SIDE EFFECT: As a convenience to users, we add to the global <code>document</code> so
+the <code>getType()</code> function need not be invoked directly. This is safe, since by
+the time we execute, the URL params are already set.</p>
+
+
+  <div class='pre p1 fill-light mt0'>donationInfo</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='gettype'>
+      getType
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Get the gift type based on info from the URL parameters.</p>
+
+
+  <div class='pre p1 fill-light mt0'>getType(): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>:
+        'donation' | 'regular donation'
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='donationinfo'>
+      DonationInfo
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Information about a donation.</p>
+
+
+  <div class='pre p1 fill-light mt0'>DonationInfo</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>amount</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>firstName</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>recurring</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>meta</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+          
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>transaction</span> <code class='quiet'>(<a href="#transactioninfo">TransactionInfo</a>)</code>
+          
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='transactioninfo'>
+      TransactionInfo
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Information about a transaction.</p>
+
+
+  <div class='pre p1 fill-light mt0'>TransactionInfo</div>
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>id</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+          
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
