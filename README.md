@@ -4,7 +4,7 @@ These get published to NPM and from there to places like UNPKG, e.g. at https://
 
 Once on the CDN, can be added to webpages directly.
 
-Add the latest version of the helper scripts & CSS (e.g. in the HTML head section of Instapage):
+Add the latest version of the helper scripts & CSS (e.g. in the HTML head):
 
 ```html
 <script src="https://unpkg.com/@gp-australia-pacific/gpap-frontend-functions@latest"></script>
@@ -24,6 +24,7 @@ In the JavaScript:
 ```
 
 In the HTML below the donate form:
+
 ```html
   <div class="donate-disclaimer-container gp-text-slate">
     <p id="donate-disclaimer-oo" class="gp-hidden">
@@ -33,4 +34,20 @@ In the HTML below the donate form:
       Your account will be debited today, then every subsequent 4 weeks. <a href="https://www.greenpeace.org.au/contact/">Get in touch with us to</a> arrange an alternative date.
     </p>
   </div>
+```
+
+## Documentation
+
+View it [online here](https://github.io/greenpeace/gpap-frontend-functions) or locally via `yarn docs:serve`.
+
+Generate it:
+```
+yarn global add documentation
+yarn docs:build
+open docs/index.html
+```
+
+Publish it:
+```
+yarn docs:publish
 ```
