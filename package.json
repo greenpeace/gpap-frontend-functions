@@ -13,7 +13,7 @@
     "build": "rm -rf dist && npm run build:js && npm run build:css",
     "prepublishOnly": "npm version patch && npm run build",
     "pub": "npm publish --access public",
-    "docs:serve": "echo open http://localhost:4001 in just a moment… && documentation serve src/index.js --watch --config documentation.yml",
+    "docs:serve": "echo open http://localhost:4001 in just a moment… && documentation serve src/index.js --watch --sort-order alpha --config documentation.yml",
     "docs:build": "documentation build src/index.js -f html -o docs --config documentation.yml",
     "docs:publish": "yarn docs:build && gh-pages -d docs",
     "test": "echo \"Error: no test specified\" && exit 1"
