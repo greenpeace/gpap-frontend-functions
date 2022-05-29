@@ -46,7 +46,7 @@ In the HTML below the donate form:
 
 ## Documentation
 
-View API docs [online](https://github.io/greenpeace/gpap-frontend-functions) or locally via `yarn docs:serve`.
+View API docs [online](https://greenpeace.github.io/gpap-frontend-functions/) or locally via `yarn docs:serve`.
 
 Generate it:
 ```
